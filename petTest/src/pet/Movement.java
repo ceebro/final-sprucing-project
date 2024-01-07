@@ -1,8 +1,10 @@
 package pet;
 
 /**
+ * Movement.java - description
  *
- * @author iamda
+ * @author Chylsy Marable
+ * @since Nov 30, 2023, 11:18:54 a.m.
  */
 public interface Movement {
     
