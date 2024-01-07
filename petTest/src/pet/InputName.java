@@ -14,22 +14,23 @@ import java.awt.*;
 public class InputName extends JFrame
 {
 
-    Cat pet;
+    Pet pet;
     
     private Button confirmName;
     private JLabel title;
     private JLabel enterMessage;
-    ImageIcon petGraphic = new ImageIcon("C:\\Users\\c.marable\\Desktop\\dog.gif");
+    ImageIcon petGraphic;
     private JLabel graphic;
     private TextField inputName;    
-    
     /**
-     * Default constructor, set class properties
+     * Default constructor, sets properties and sets layout of JFrame
+     * @param pet - The pet the user wants
+     * @param iconPathway - the icon to display correlating to pet species
      */
-    public InputName(Cat pet) {
+    public InputName(Pet pet, String iconPathway) {
         
         this.pet = pet;
-        
+        petGraphic = new ImageIcon(iconPathway);
         title = new JLabel();
         enterMessage = new JLabel();
         inputName = new java.awt.TextField();
@@ -38,6 +39,7 @@ public class InputName extends JFrame
         
         setSize(700,600);
         setResizable(false);
+        setLocationRelativeTo(null);
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 204));
@@ -108,6 +110,7 @@ public class InputName extends JFrame
         
         pet.name = inputName.getText();
         pet.outputPetStats();
-    }   
-    
+        dispose();
+        
+    }     
 }
