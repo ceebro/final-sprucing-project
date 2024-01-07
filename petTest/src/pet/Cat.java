@@ -12,53 +12,90 @@ import pet.InputName;
  * @author Chylsy Marable
  * @since Nov 1, 2023, 11:27:32 a.m.
  */
-public class Cat 
-{
+public class Cat extends Pet {
 
-    public static String name;
-    public static String species;
-    public static int hunger;
-    public static int happiness;
-    
+
     public InputName input;
     public StatsWindow statsWindow;
-    
+
     /**
      * Default constructor, set class properties
      */
-    public Cat() {
-                
-        input = new InputName(this); //calling inputName JFrame
-        input.setVisible(true);
+    public Cat(String species,String pathway) {
         
+        super(species,pathway);
+        input = new InputName(this,"Icon Pathway"); //calling inputName JFrame
+        input.setVisible(true);
+
         hunger = 100;
         happiness = 100;
+        
     }
-    
-    public void outputPetStats(){
-                
+
+    @Override
+    public int getX() {
+
+        return this.x;
+
+    }
+
+    @Override
+    public void setX(int x) {
+
+        this.x = x;
+
+    }
+
+    @Override
+    public int getY() {
+
+        return this.y;
+
+    }
+
+    @Override
+    public void setY(int y) {
+        
+        this.y = y;
+        
+    }
+
+    @Override
+    public void outputPetStats() {
+        
         statsWindow = new StatsWindow(this);
         statsWindow.setVisible(true);
+        
+        
+        
     }
-    
-    public void hungerDecrease(){
+
+    @Override
+    public void hungerDecrease() {
         
         hunger -= 10;
+        
     }
-    
-    public void feed(){
+
+    @Override
+    public void feed() {
         
         hunger += 10;
-    }
-    
-    public void play(){
         
-        hunger += 10;
     }
-    
-    public void neglect(){
+
+    @Override
+    public void play() {
         
-        hunger =+ 10;
+        hunger -= 10;
+        happiness += 10;
+        
     }
-    
+
+    @Override
+    public void neglect() {
+        
+        happiness -= 10;
+        
+    }
 }
