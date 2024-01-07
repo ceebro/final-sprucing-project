@@ -12,7 +12,7 @@ import java.awt.*;
  */
 public class StatsWindow extends JFrame {
 
-    Cat pet;
+    Pet pet;
 
     private JButton okButton;
     private JLabel title;
@@ -34,7 +34,7 @@ public class StatsWindow extends JFrame {
     private JLabel catGraphic;
     ImageIcon cat = new ImageIcon("C:\\Users\\c.marable\\Desktop\\cat_play.gif");
 
-    public StatsWindow(Cat pet) {
+    public StatsWindow(Pet pet) {
 
         this.pet = pet;
 
@@ -49,6 +49,7 @@ public class StatsWindow extends JFrame {
         this.setBackground(pink);
         setSize(705, 600);
         setResizable(false);
+        setLocationRelativeTo(null);
 
         title.setFont(new java.awt.Font("Comic Sans MS", 0, 36));
         title.setForeground(chocolate);
@@ -122,5 +123,6 @@ public class StatsWindow extends JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 
         this.dispose();
+         
     }
 }
